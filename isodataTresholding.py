@@ -2,11 +2,12 @@ from PIL import Image
 import numpy  as np
 import matplotlib.pyplot as plt
 
-im = Image.open("C:/Users/Mohit K/Desktop/datasets/cameraman.tif")
+im = Image.open(".../cameraman.tif")
 img=np.array(im)
 
 new=[]
 count=0
+#find histogram
 for i in range(256):
     for j in range(img.shape[1]):
 
@@ -24,6 +25,7 @@ for i in range(len(new)):
 
 median1=summ/65536
 
+#calculate mean 
 def mean(a,th1,th2):
     summ=0
     count=0
@@ -36,6 +38,7 @@ def mean(a,th1,th2):
 previousThreshold=new[1]
 nextThreshold=median1
 
+#loop until previous threshold is equals to next threshold
 while(previousThreshold!=nextThreshold):
     previousThreshold=nextThreshold
     m1=mean(new,1,round(previousThreshold))
@@ -45,6 +48,7 @@ while(previousThreshold!=nextThreshold):
 
 print(nextThreshold)
 
+#assign gray value(255) to image values greater than 90(next threshold)
 for i in range(256):
     for j in range(256):
 
