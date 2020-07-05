@@ -14,7 +14,7 @@ for i in range(256):
 
             if img[j][k]==i-1:
                 count+=1
-    new.append(count)
+    new.append(count)                       #histogram of the image
     count=0
 print(new)
 
@@ -59,7 +59,7 @@ for i in range(9,254):
     va.append(varWithin)                  #within class variance
 
 print(va)
-x=va.index(min(va))                      #index of within class variance
+x=va.index(min(va))                      #index of minimum within class variance
 print(x)
 
 for i in range(256):
