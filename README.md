@@ -1,4 +1,4 @@
-# Thresholding
+# Image segmentation using thresholding
 
 __Image segmentation can be done using Thresholding.__
 
